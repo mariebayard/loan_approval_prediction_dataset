@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Loan Prediction{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('dataset') }}">Dataset</a></li>
+                <li><a href="{{ url_for('predict_tf') }}">Tensorflow</a></li>
+                <li><a href="{{ url_for('predict_rf') }}">Random Forest</a></li>
+                <li><a href="{{ url_for('predict_XGB') }}">XGBoost</a></li>
+                <li><a href="{{ url_for('predict_dt') }}">Decision Tree</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

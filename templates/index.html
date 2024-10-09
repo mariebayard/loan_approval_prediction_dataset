@@ -4,5 +4,21 @@
 
 {% block content %}
     <h1>Welcome to Loan Prediction</h1>
-    <p>Här kan du skriva in dina uppgifter och få svar på om ditt lån kommer godkännas eller ej.</p>
+    <p class="home-p">On this page, you can use different models built with TensorFlow, 
+        Random Forest, XGBoost, and Decision Tree to predict whether a 
+        loan is likely to be approved or not. </p>
+    <p class="home-p">
+        The models are trained on a dataset from Kaggle. The dataset contains 
+        variables such as the number of dependents, education, 
+        self-employed status, annual income, loan amount, loan 
+        term, credit score, residential assets value, commercial assets 
+        value, luxury assets value, and bank asset value. The variable loan 
+        status indicates whether the specific loan was approved or not.
+    </p> 
+    <p class="home-p">
+        You can use the models yourself to predict whether a loan would be 
+        approved or not based on the information you provide. The answer 
+        you receive is entirely based on the data from the Kaggle dataset.
+    </p>    
+         
 {% endblock %}

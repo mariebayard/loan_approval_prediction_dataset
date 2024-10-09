@@ -87,6 +87,15 @@ h1{
     font-size: 3rem;
     padding: 0 0 3rem 0;
 }
+
+/* --------------------- Home Page Style -------------*/
+.home-p{
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
 /* --------------------- Table styles -------------*/
 .table-container{
     max-width: 80%;
@@ -132,7 +141,7 @@ tr:hover {
 }
 
 h2 {
-    text-align: center; 
+    text-align: left; 
     margin-bottom: 20px; 
 }
 
@@ -144,6 +153,7 @@ label {
     display: block; 
     margin-bottom: 5px; 
     font-weight: bold;
+    text-align: left;
 }
 
 input[type="number"] {
@@ -172,7 +182,7 @@ input[type="submit"].btn:hover {
 
 .radio-group {
     display: flex;
-    justify-content: center;         
+    justify-content: left;         
     margin-bottom: 1rem; 
     margin-top: 1rem;           
 }

@@ -75,7 +75,7 @@ html{
 .desktop-nav ul li a{
     color: var(--main-bg-color);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
     position: relative;
 }
 .desktop-nav ul li a::after {

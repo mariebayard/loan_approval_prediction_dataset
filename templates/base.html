@@ -10,12 +10,12 @@
     <div class="container">
         <nav class="desktop-nav">
             <ul>
-                <li><a href="{{ url_for('home') }}">Home</a></li>
-                <li><a href="{{ url_for('dataset') }}">Dataset</a></li>
-                <li><a href="{{ url_for('predict_tf') }}">ANN</a></li>
-                <li><a href="{{ url_for('predict_rf') }}">Random Forest</a></li>
-                <li><a href="{{ url_for('predict_XGB') }}">XGBoost</a></li>
-                <li><a href="{{ url_for('predict_dt') }}">Decision Tree</a></li>
+                <li><a href="{{ url_for('home') }}" class="nav-link {% if request.path == url_for('home') %}active{% endif %}">Home</a></li>
+                <li><a href="{{ url_for('dataset') }}" class="nav-link {% if request.path == url_for('dataset') %}active{% endif %}">Dataset</a></li>
+                <li><a href="{{ url_for('predict_tf') }}" class="nav-link {% if request.path == url_for('predict_tf') %}active{% endif %}">ANN</a></li>
+                <li><a href="{{ url_for('predict_rf') }}" class="nav-link {% if request.path == url_for('predict_rf') %}active{% endif %}">Random Forest</a></li>
+                <li><a href="{{ url_for('predict_XGB') }}" class="nav-link {% if request.path == url_for('predict_XGB') %}active{% endif %}">XGBoost</a></li>
+                <li><a href="{{ url_for('predict_dt') }}" class="nav-link {% if request.path == url_for('predict_dt') %}active{% endif %}">Decision Tree</a></li>
             </ul>
         </nav>
     </div>

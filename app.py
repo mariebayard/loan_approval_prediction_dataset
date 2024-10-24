@@ -43,9 +43,24 @@ def get_features(request):
     luxury_assets_value = float(request.form['luxury_assets_value'])
     bank_asset_value = float(request.form['bank_asset_value'])
 
+    warnings=[]
+    if not (200000<= income_annum<= 9900000):
+        warnings.append('Annual income is outside the range of the training dataset.')
+    if not (300000<= loan_amount<= 39500000):
+        warnings.append('Loan amount is outside the range of the training dataset.')
+    if not (-100000<= residential_assets_value<= 29100000):
+        warnings.append('Residential assets value is outside the range of the training dataset.')
+    if not (0<= commercial_assets_value<= 19400000):
+        warnings.append('Commercial assets value is outside the range of the training dataset.')
+    if not (300000<= luxury_assets_value<= 39200000):
+        warnings.append('Luxury assets value is outside the range of the training dataset.')
+    if not (0<= bank_asset_value<= 14700000):
+        warnings.append('Bank assets value is outside the range of the training dataset.')
+
     return np.array([[no_of_dependants, education, self_employed, income_annum, loan_amount, loan_term,
                       cibil_score, residential_assets_value, commercial_assets_value,
-                      luxury_assets_value, bank_asset_value]])
+                      luxury_assets_value, bank_asset_value]]), warnings
+
 def make_prediction_tf(model, features):
     prediction = model.predict(features)
     prediction_class = (prediction > 0.5).astype(int)
@@ -58,37 +73,37 @@ def make_prediction(model, features):
 @app.route('/predict_tf', methods=['GET','POST'])
 def predict_tf():
     if request.method == 'POST':
-        features = get_features(request)
+        features, warnings = get_features(request)
         features_scaled = scaler.transform(features)
         result = make_prediction_tf(model, features_scaled)
-        return render_template('result.html', prediction=result)
+        return render_template('result.html', prediction=result, warnings=warnings)
 
     return render_template('predict_tf.html')
 
 @app.route('/predict_rf', methods=['GET','POST'])
 def predict_rf():
     if request.method == 'POST':
-        features = get_features(request)
+        features, warnings = get_features(request)
         result = make_prediction(model_rf, features)
-        return render_template('result.html', prediction=result)
+        return render_template('result.html', prediction=result, warnings=warnings)
 
     return render_template('predict_rf.html')
 
 @app.route('/predict_XGB', methods=['GET','POST'])
 def predict_XGB():
     if request.method == 'POST':
-        features = get_features(request)
+        features, warnings = get_features(request)
         result = make_prediction(model_XGB, features)
-        return render_template('result.html', prediction=result)
+        return render_template('result.html', prediction=result, warnings=warnings)
 
     return render_template('predict_XGB.html')
 
 @app.route('/predict_dt', methods=['GET','POST'])
 def predict_dt():
     if request.method == 'POST':
-        features = get_features(request)
+        features, warnings = get_features(request)
         result = make_prediction(model_dt, features)
-        return render_template('result.html', prediction=result)
+        return render_template('result.html', prediction=result, warnings=warnings)
 
     return render_template('predict_dt.html')
 

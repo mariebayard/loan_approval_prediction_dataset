@@ -3,12 +3,24 @@
 {% block title %}Predict - Loan Prediction{% endblock %}
 
 {% block content %}
-    <h1>Loan Prediction Result</h2>
-    <p class="p-result">Your loan application will probably be:</p>
-    <p class="result">{{ prediction }}</p>
-    <div class="btn-div-result">
-        <a class="btn btn-home-result" href="/">Back to home</a>
-    </div>
-    
+    <main>
+        <h1>Loan Prediction Result</h2>
+        <p class="p-result">Your loan application will probably be:</p>
+        <p class="result">{{ prediction }}</p>
+        {% if warnings %}
+            <div class="warning-box">
+                <h3>Warnings:</h3>
+                <p class="p-warnings">Some of the information you provided is outside the range of the training dataset. Therefor the prediction may not be accurate.</p>
+                <ul class="ul-warnings">
+                    {% for warning in warnings %}
+                        <li class="li-warnings"> {{ warning }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <div class="btn-div-result">
+            <a class="btn btn-home-result" href="/home">Back to home</a>
+        </div>
+    </main>
 
 {% endblock %}

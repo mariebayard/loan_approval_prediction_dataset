@@ -81,7 +81,7 @@
                 <label for="income_annum">Annual Income
                     <span class="tooltip">
                         <i class="info-icon">i</i>
-                        <span class="tooltiptext">Enter your annual income (USD).</span>
+                        <span class="tooltiptext">Enter your annual income (USD). Expected values are between 300000 and 9900000.</span>
                     </span> :
                     </label>
                 <input type="number" name="income_annum" required>
@@ -91,7 +91,7 @@
                 <label for="loan_amount">Loan Amount
                     <span class="tooltip">
                         <i class="info-icon">i</i>
-                        <span class="tooltiptext">Enter the desired loan amount (USD).</span>
+                        <span class="tooltiptext">Enter the desired loan amount (USD). Expected values are between 300000 and 39500000.</span>
                     </span> :
                 </label>
                 <input type="number" name="loan_amount" required>
@@ -101,27 +101,27 @@
                 <label for="loan_term">Loan Term
                     <span class="tooltip">
                         <i class="info-icon">i</i>
-                        <span class="tooltiptext">Enter the number of years you want to spread the loan over.</span>
+                        <span class="tooltiptext">Enter the number of years you want to spread the loan over. You can enter values between 2 and 20. </span>
                     </span> :
                     </label>
-                <input type="number" name="loan_term" required>
+                <input type="number" name="loan_term" min="2" max="20" required>
             </div>
         
             <div class="form-group">
                 <label for="cibil_score">Credit Score
                     <span class="tooltip">
                         <i class="info-icon">i</i>
-                        <span class="tooltiptext">Enter your credit score.</span>
+                        <span class="tooltiptext">Enter your credit score. You can enter values between 300 and 900.</span>
                     </span> :
                 </label>
-                <input type="number" name="cibil_score" required>
+                <input type="number" name="cibil_score" min="300" max="900" required>
             </div>
         
             <div class="form-group">
                 <label for="residential_assets_value">Residential Asset Value
                     <span class="tooltip">
                         <i class="info-icon">i</i>
-                        <span class="tooltiptext">Enter the value of your residential assets.</span>
+                        <span class="tooltiptext">Enter the value of your residential assets. Expected values are between -100000 and 29100000.</span>
                     </span> :
                 </label>
                 <input type="number" name="residential_assets_value" required>
@@ -131,7 +131,7 @@
                 <label for="commercial_assets_value">Commercial Asset Value
                     <span class="tooltip">
                         <i class="info-icon">i</i>
-                        <span class="tooltiptext">Enter the value of your commercial assets.</span>
+                        <span class="tooltiptext">Enter the value of your commercial assets. Expected values are between 0 and 199400000.</span>
                     </span> :
                 </label>
                 <input type="number" name="commercial_assets_value" required>
@@ -141,7 +141,7 @@
                 <label for="luxury_assets_value">Luxury Asset Value
                     <span class="tooltip">
                         <i class="info-icon">i</i>
-                        <span class="tooltiptext">Enter the value of your luxury assets.</span>
+                        <span class="tooltiptext">Enter the value of your luxury assets. Expected values are between 300000 and 39200000.</span>
                     </span> :
                 </label>
                 <input type="number" name="luxury_assets_value" required>
@@ -151,7 +151,7 @@
                 <label for="bank_asset_value">Bank Asset Value
                     <span class="tooltip">
                         <i class="info-icon">i</i>
-                        <span class="tooltiptext">Enter the value of your bank assets.</span>
+                        <span class="tooltiptext">Enter the value of your bank assets. Expected values are between 0 and 14700000.</span>
                     </span> :
                 </label>
                 <input type="number" name="bank_asset_value" required>

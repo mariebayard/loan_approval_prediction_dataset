@@ -314,7 +314,7 @@ input[type="submit"].btn:hover {
     padding: 5px;
     position: absolute;
     z-index: 1;
-    bottom: 125%; /* Position above the text */
+    bottom: 125%;
     left: 50%;
     margin-left: -100px;
     opacity: 0;
@@ -336,4 +336,30 @@ input[type="submit"].btn:hover {
     font-size: 0.8em;
     vertical-align: super;
     line-height: 1;
+}
+
+/*------------- footer ------------*/
+footer {
+    background-color: var(--accent-color-1);
+    color: var(--main-bg-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0; 
+    padding: 0;
+    letter-spacing: 0.5px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
 }
